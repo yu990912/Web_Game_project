@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios'; // 백엔드 통신을 위한 axios 추가
 
 const PLAYER_EMOJI = '🥷';
-const API_URL = 'http://localhost:8080/api'; // 백엔드 주소
+const API_URL = 'https://web-game-project.onrender.com/'; // 백엔드 주소
 
 const App = () => {
   const [currentScreen, setCurrentScreen] = useState('TITLE');
