@@ -1,0 +1,15 @@
+name: Deploy Backend to Render
+
+on:
+  push:
+    branches:
+      - main # (또는 master, 본인 브랜치 이름에 맞게)
+    paths:
+      - 'web_Game_backend/**' # 백엔드 폴더 안의 파일이 수정되었을 때만 실행!
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Deploy Hook
+        run: curl "${{ secrets.RENDER_BACKEND_HOOK }}"

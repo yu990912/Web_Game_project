@@ -1,0 +1,15 @@
+name: Deploy Frontend to Render
+
+on:
+  push:
+    branches:
+      - main # (또는 master)
+    paths:
+      - 'web-game-project/**' # 💡 프론트엔드 폴더가 수정되었을 때만 작동!
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Frontend Deploy Hook
+        run: curl "${{ secrets.RENDER_FRONTEND_HOOK }}"
