@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: game_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: gameuser       # DB 아이디
+      POSTGRES_PASSWORD: gamepassword # DB 비밀번호
+      POSTGRES_DB: gamedb           # DB 이름
+    ports:
+      - "5432:5432" # 로컬 5432 포트와 컨테이너 5432 포트 연결
+    volumes:
+      - pgdata:/var/lib/postgresql/data # 컨테이너가 꺼져도 데이터 유지
+
+volumes:
+  pgdata:

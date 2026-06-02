@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # 1. 데이터베이스 컨테이너
+  db:
+    image: postgres:15-alpine
+    container_name: game_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: gameuser
+      POSTGRES_PASSWORD: gamepassword
+      POSTGRES_DB: gamedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # 2. 백엔드 컨테이너 (Node.js)
+  backend:
+    build: ./web_Game_backend # 백엔드 폴더 경로
+    container_name: game_backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      # 💡 중요: 이제 localhost가 아니라 컨테이너 이름(db)으로 접속!
+      DB_USER: gameuser
+      DB_PASSWORD: gamepassword
+      DB_HOST: db 
+      DB_PORT: 5432
+      DB_NAME: gamedb
+    depends_on:
+      - db
+
+  # 3. 프론트엔드 컨테이너 (React + Nginx)
+  frontend:
+    build: ./web-game-project # 프론트엔드 폴더 경로
+    container_name: game_frontend
+    restart: always
+    ports:
+      - "80:80" # 웹 브라우저 기본 포트(80)로 접속
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
