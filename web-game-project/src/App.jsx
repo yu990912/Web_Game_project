@@ -146,7 +146,7 @@ const App = () => {
     <div style={{ width: '100%', height: '100%',
    backgroundImage: "url('/main.png')", backgroundSize: 'cover', backgroundPosition: 'center',
     display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-      <div style={{ position: 'absolute', top: '30px', right: '40px', color: 'white', textAlign: 'right' }}>
+      <div style={{ position: 'absolute', top: '30px', right: '40px', color: 'black', textAlign: 'right' }}>
         <h3 style={{ margin: '0 0 5px 0', fontSize: '28px' }}>👤 플레이어: {currentUser}</h3>
         {/* DB에서 가져온 최고 점수 렌더링 */}
         <p style={{ margin: 0, fontSize: '24px', color: '#f1c40f' }}>🏆 최고 점수: {parseFloat(myBestScore).toFixed(2)}초</p>
