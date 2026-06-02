@@ -132,7 +132,7 @@ const App = () => {
     <div style={{ width: '100%', height: '100%',
      backgroundImage: "url('/login.png')", backgroundSize: 'cover', backgroundPosition: 'center',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', animation: 'slideIn 0.5s ease-in-out forwards' }}>
-      <h2 style={{ fontSize: '48px', marginBottom: '30px' , color : 'white'}}>로그인 및 회원가입</h2>
+      <h2 style={{ fontSize: '48px', marginBottom: '30px' , color : 'red'}}>로그인 및 회원가입</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', width: '300px' }}>
         <input type="text" placeholder="아이디" value={usernameInput} onChange={e => setUsernameInput(e.target.value)} style={{ padding: '15px', fontSize: '18px', borderRadius: '8px' }} />
         <input type="password" placeholder="비밀번호" value={passwordInput} onChange={e => setPasswordInput(e.target.value)} style={{ padding: '15px', fontSize: '18px', borderRadius: '8px' }} />
