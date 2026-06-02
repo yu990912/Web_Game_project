@@ -11,11 +11,9 @@ app.use(express.json());
 
 // --- [DB 연결 풀(Pool) 설정] ---
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+ connectionString: process.env.DB, // 네가 Render에 설정한 환경변수 이름
+  ssl: {
+    rejectUnauthorized: false // 클라우드 DB 접속을 위한 보안 설정
 });
 
 // --- [DB 초기화 및 더미 데이터 삽입 함수] ---
