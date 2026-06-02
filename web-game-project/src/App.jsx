@@ -230,7 +230,7 @@ const App = () => {
         const now = Date.now();
         survivedTime = (now - startTime) / 1000;
         const level = Math.min(Math.floor(survivedTime / 20), 6);
-        const spawnRate = Math.max(200, 800 - (level * 100));
+        const spawnRate = 120;//Math.max(200, 800 - (level * 100));
         const basePoopSpeed = 5 + (level * 2);
 
         if (bgImage.complete && bgImage.naturalWidth > 0) ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
