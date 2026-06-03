@@ -132,7 +132,7 @@ const App = () => {
     <div style={{ width: '100%', height: '100%',
      backgroundImage: "url('/login.png')", backgroundSize: 'cover', backgroundPosition: 'center',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'white', animation: 'slideIn 0.5s ease-in-out forwards' }}>
-      <h2 style={{ fontSize: '48px', marginBottom: '30px' , color : 'red'}}>로그인 및 회원가입</h2>
+      <h2 style={{ fontSize: '48px', marginBottom: '30px' }}>로그인 및 회원가입</h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', width: '300px' }}>
         <input type="text" placeholder="아이디" value={usernameInput} onChange={e => setUsernameInput(e.target.value)} style={{ padding: '15px', fontSize: '18px', borderRadius: '8px' }} />
         <input type="password" placeholder="비밀번호" value={passwordInput} onChange={e => setPasswordInput(e.target.value)} style={{ padding: '15px', fontSize: '18px', borderRadius: '8px' }} />
@@ -151,7 +151,7 @@ const App = () => {
         {/* DB에서 가져온 최고 점수 렌더링 */}
         <p style={{ margin: 0, fontSize: '24px', color: '#f1c40f' }}>🏆 최고 점수: {parseFloat(myBestScore).toFixed(2)}초</p>
       </div>
-      <h2 style={{ fontSize: '56px', color: 'white', marginBottom: '50px' }}>게임 로비</h2>
+      <h2 style={{ fontSize: '56px', marginBottom: '50px' }}>게임 로비</h2>
       <div style={{ display: 'flex', gap: '30px' }}>
         <button onClick={() => setCurrentScreen('GAME')} style={{ padding: '20px 40px', fontSize: '28px', backgroundColor: '#2ecc71', color: 'white', border: 'none', borderRadius: '15px', cursor: 'pointer' }}>🎮 게임 시작</button>
         <button onClick={fetchRanking} style={{ padding: '20px 40px', fontSize: '28px', backgroundColor: '#e67e22', color: 'white', border: 'none', borderRadius: '15px', cursor: 'pointer' }}>📊 랭킹 보기</button>
